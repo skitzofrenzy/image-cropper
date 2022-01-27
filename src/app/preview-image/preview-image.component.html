@@ -1,0 +1,16 @@
+<div class="container">
+    <form action="productFormGroup">
+      <input type="file" name="file" id="file" (change)="uploadFile($event)" accept="image/*">
+    </form>
+    <div class="image-cropper-container">
+      <image-cropper
+      [imageChangedEvent]="imageChangeEvent"
+      [aspectRatio]="1"
+      format="png"
+      [roundCropper]="true"
+      (imageCropped)="imageCropped($event)"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+</div>
